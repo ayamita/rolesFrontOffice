@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+  <!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+  <noscript><link rel="stylesheet" href="/assets/css/noscript.css" /></noscript>
+
+  <!-- Bootstrap CSS File -->
+  <link href="/assets/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Libraries CSS Files -->
+  <link href="/assets/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="/assets/lib/fancybox/fancybox.css" rel="stylesheet">
+
+  <link href="/stylesheets/css/style.css" rel="stylesheet">
+</head>
+
+<body data-spy="scroll" data-offset="58" data-target="#navigation">
+
+  <!-- Fixed navbar -->
+  <div id="navigation" class="navbar navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <i class="fa fa-bars"></i></button>
+        </div>
+        <div class="navbar-collapse collapse">
+          <% for( let permiso=0; permiso < permisos.length; permiso++ ) { %>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="/<%= permisos[permiso].ruta %>"><%= permisos[permiso].nombre_permiso %></a></li>
+            </ul>
+          <% } %> 
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="/login">Cerrar sesión</a></li>
+          </ul>   
+        </div>
+    </div>
+  </div>
+
+  <div id="main">
+
+    <!-- Header -->
+      <header id="header">
+      <div class="logohead">
+        <img src="/images/img/logo.png" alt="" width="150">
+      </div>	
+        <h1 class="text-center">Juegos de mesa</h1>
+        <p class="text-center">Diversion grupal</p>
+      </header>
+
+    <!-- Thumbnail -->
+      <section id="thumbnails">
+        <article>
+          <a class="thumbnail" href="/images/img/ilustraciones/images/fulls/ajedrez.jpg" data-position="left center"><img src="/images/img/ilustraciones/images/thumbs/ajedrez.jpg"/></a>
+        </article>
+        <article>
+          <a class="thumbnail" href="/images/img/ilustraciones/images/fulls/uno.jpg"><img src="/images/img/ilustraciones/images/thumbs/uno.jpg"/></a>
+        </article>
+        <article>
+          <a class="thumbnail" href="/images/img/ilustraciones/images/fulls/poker.jpg" data-position="top center"><img src="/images/img/ilustraciones/images/thumbs/poker.jpg"/></a>
+        </article>
+        <article>
+          <a class="thumbnail" href="/images/img/ilustraciones/images/fulls/conect4.jpg"><img src="/images/img/ilustraciones/images/thumbs/conect4.jpg" alt="" /></a>
+        </article>
+        <article>
+          <a class="thumbnail" href="/images/img/ilustraciones/images/fulls/domino.jpg" data-position="top center"><img src="/images/img/ilustraciones/images/thumbs/domino.jpg" alt="" /></a>
+        </article>
+        <article>
+          <a class="thumbnail" href="/images/img/ilustraciones/images/fulls/jenga.jpg"><img src="/images/img/ilustraciones/images/thumbs/jenga.jpg" alt="" /></a>
+        </article>
+        <article>
+          <a class="thumbnail" href="/images/img/ilustraciones/images/fulls/rompe.jpg"><img src="/images/img/ilustraciones/images/thumbs/rompe.jpg" alt="" /></a>
+        </article>
+        <article>
+          <a class="thumbnail" href="/images/img/ilustraciones/images/fulls/beber.jpg"><img src="/images/img/ilustraciones/images/thumbs/beber.jpg" alt="" /></a>
+        </article>
+      </section>      
+  </div>
+
+  <!-- Scripts -->
+  <script src="/assets/js/jquery.min.js"></script>
+  <script src="/assets/js/skel.min.js"></script>
+  <!--[if lte IE 8]><script src="/assets/js/ie/respond.min.js"></script><![endif]-->
+  <script src="/assets/js/main.js"></script>
+  <script type="text/javascript">
+    $('.toggle').click(function(){
+    $('.caption').toggle();
+    })
+  </script>
+</body>
+</html>

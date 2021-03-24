@@ -9,8 +9,11 @@ var session = require('express-session')
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var login = require('./routes/login');
-var menu = require('./routes/menu');
-
+var inicio = require('./routes/inicio');
+var fotos = require('./routes/fotos');
+var ilustraciones = require('./routes/ilustraciones');
+var juegos = require('./routes/juegos');
+var videojuegos = require('./routes/videojuegos');
 
 var app = express();
 
@@ -26,7 +29,7 @@ app.use(session({
   secret: 'Mysecretsession',
   cookie: {},
   saveUninitialized: false,
-  resave: false
+  resave: true
 }));
 app.use(flash());
 
@@ -36,7 +39,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/login', login);
-app.use('/menu', menu);
+app.use('/inicio',inicio);
+app.use('/fotos',fotos);
+app.use('/ilustraciones',ilustraciones);
+app.use('/juegos',juegos);
+app.use('/videojuegos',videojuegos);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
