@@ -12,7 +12,7 @@ router.get('/', function(req, res) {
     "INNER JOIN permisos ON permisosusuario.idpermiso = permisos.idpermiso " +
     "where usuarios.idusuario =? and permisosusuario.estatys != '' order by idpermiso asc", id,  function(err,resultados){
     console.log(resultados);
-    res.render('index', {permisos:resultados});
+    res.render('layouts/header', {permisos:resultados});
   });
 });
 

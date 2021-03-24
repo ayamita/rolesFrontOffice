@@ -13,14 +13,15 @@ router.post('/', function(req, res, next) {
     contraseña,
   }
   if (usuario && contraseña) {
-      db.query('SELECT * FROM usuarios WHERE usuario = ? AND contraseña = ? and superusuario = 1 ', [datos.usuario, datos.contraseña], function(err,resultados){
-        const superusuario = resultados[0].idusuario;    
-          if(resultados.length > 0){            
+      db.query('SELECT * FROM usuarios WHERE usuario = ? AND contraseña = ? and superusuario = 0 ', [datos.usuario, datos.contraseña], function(err,resultados){                 
+          if(resultados.length > 0){      
+              const superusuario = resultados[0].idusuario;         
+              req.session.idusuario = superusuario;
               res.redirect('/');
           }else{
               res.send('El correo o contraseña es incorrecto');
           }
-          res.end();
+          res.end();          
           console.log(resultados);
       });
       }else{
