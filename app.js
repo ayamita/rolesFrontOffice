@@ -6,7 +6,6 @@ var flash = require('connect-flash');
 var logger = require('morgan');
 var session = require('express-session')
 
-var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var login = require('./routes/login');
 var inicio = require('./routes/inicio');
@@ -36,7 +35,6 @@ app.use(flash());
 app.use('/assets', express.static(__dirname + '/assets'));
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/login', login);
 app.use('/inicio',inicio);

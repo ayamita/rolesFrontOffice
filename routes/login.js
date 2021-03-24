@@ -17,7 +17,7 @@ router.post('/', function(req, res, next) {
           if(resultados.length > 0){      
               const superusuario = resultados[0].idusuario;         
               req.session.idusuario = superusuario;
-              res.redirect('/');
+              res.redirect('/inicio');
           }else{
               res.send('El correo o contraseña es incorrecto');
           }

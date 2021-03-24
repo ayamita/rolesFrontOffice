@@ -33,7 +33,7 @@
   <div id="navigation" class="navbar navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
-             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
             <i class="fa fa-bars"></i></button>
         </div>
         <div class="navbar-collapse collapse">
@@ -41,10 +41,14 @@
             <ul class="nav navbar-nav">
                 <li class="active"><a href="/<%= permisos[permiso].ruta %>"><%= permisos[permiso].nombre_permiso %></a></li>
             </ul>
-          <% } %>    
+          <% } %> 
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="/login">Cerrar sesión</a></li>
+          </ul>   
         </div>
     </div>
   </div>
+
 
   <!-- === MAIN Background === -->
   <div class="slide story" id="intro" data-slide="1">
