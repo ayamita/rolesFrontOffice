@@ -12,7 +12,14 @@ router.get('/', function(req, res) {
     "INNER JOIN permisos ON permisosusuario.idpermiso = permisos.idpermiso " +
     "where usuarios.idusuario =? and permisosusuario.estatys != '' order by idpermiso asc", id,  function(err,resultados){
     console.log(resultados);
-    res.render('inicio', {permisos:resultados});
+  
+    if(resultados.length > 0){
+      console.log(resultados);
+      res.render('inicio', {permisos:resultados});
+    }else{
+      console.log('Chale man no hay');
+      res.render('sinPermiso');
+    }    
   });
 });
 

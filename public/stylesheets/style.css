@@ -1,8 +1,25 @@
 body {
-  padding: 50px;
+  background-color: #212F3C;
+  padding: 50px 80px ;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
   color: #00B7FF;
+}
+
+.sinPermiso h1{
+  color: aliceblue;
+  text-align: center;
+}
+
+.trans{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+a{
+  width: 150px;
+  font-size: 80px;
 }

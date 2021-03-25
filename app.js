@@ -13,6 +13,7 @@ var fotos = require('./routes/fotos');
 var ilustraciones = require('./routes/ilustraciones');
 var juegos = require('./routes/juegos');
 var videojuegos = require('./routes/videojuegos');
+var sinPermiso = require('./routes/sinPermiso');
 
 var app = express();
 
@@ -42,6 +43,7 @@ app.use('/fotos',fotos);
 app.use('/ilustraciones',ilustraciones);
 app.use('/juegos',juegos);
 app.use('/videojuegos',videojuegos);
+app.use('/sinPermiso',sinPermiso);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
