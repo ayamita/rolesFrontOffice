@@ -3,7 +3,7 @@ var router = express.Router();
 var db=require("../config/conexion");
 
 router.get('/', function(req, res, next) {
-    res.render('login');
+    res.render('login', { message: req.flash('Fallo')});
   });
 
 router.post('/', function(req, res, next) {
@@ -15,17 +15,19 @@ router.post('/', function(req, res, next) {
   if (usuario && contraseña) {
       db.query('SELECT * FROM usuarios WHERE usuario = ? AND contraseña = ? and superusuario = 0 ', [datos.usuario, datos.contraseña], function(err,resultados){                 
           if(resultados.length > 0){      
-              const superusuario = resultados[0].idusuario;         
-              req.session.idusuario = superusuario;
-              res.redirect('/inicio');
+            const superusuario = resultados[0].idusuario;         
+            req.session.idusuario = superusuario;
+            res.redirect('/inicio');
           }else{
-              res.send('El correo o contraseña es incorrecto');
+            req.flash('Fallo','El correo o contraseña es incorrecto');
+            res.redirect('login');
           }
           res.end();          
           console.log(resultados);
       });
       }else{
-      res.send('Favor de ingresar correo y contraseña');
+      req.flash('Fallo','Favor de llenar todos los campos');
+      res.redirect('login'); 
       res.end();
   }
 });
